@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import Logo from '../../assets/images/logo.svg';
 
-const Header = () => {
+const Header = ({setCurrentLocation}) => {
 
     const navigate = useNavigate()
 
@@ -15,6 +15,9 @@ const Header = () => {
         if(activeElement){
             activeElement.style.color = '#33323D'
         }
+
+        setCurrentLocation(location.pathname)
+
         if(e === 'home') {
             setActiveElement(elements.current[0])
             navigate('/')
@@ -29,17 +32,19 @@ const Header = () => {
 
     useEffect(()=> {
 
-        const currentLocation = location.pathname
+        const activeLocation = location.pathname
 
         if(!activeElement){
-            setActiveElement(elements.current[0])
+            if(activeLocation === '/') setActiveElement(elements.current[0])
+            if(activeLocation === '/contact-me') setActiveElement(elements.current[1])
+            if(activeLocation === '/portfolio') setActiveElement(elements.current[2])
         }
-
-        if(currentLocation === '/'){
+    
+        if(activeLocation === '/'){
             elements.current[0].style.color = '#5FB4A2'
-        } else if(currentLocation === '/portfolio'){
+        } else if(activeLocation === '/portfolio'){
             elements.current[2].style.color = '#5FB4A2'
-        } else if(currentLocation === '/contact-me'){ 
+        } else if(activeLocation === '/contact-me'){ 
             elements.current[1].style.color = '#5FB4A2'
         }
 

@@ -1,13 +1,18 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 import HomeHero from '../../assets/images/homepage/desktop/image-homepage-hero.jpg'
 import HomeProfile from '../../assets/images/homepage/desktop/image-homepage-profile.jpg'
 
-const Home = () => {
+const Home = ({setCurrentLocation}) => {
 
     const navigate = useNavigate();
+    const location = useLocation();
 
+    console.log(setCurrentLocation)
+    
     const handleNavigate = () => {
+        console.log('hello')
+        setCurrentLocation(location.pathname)
         navigate('/portfolio')
     }
 
