@@ -5,7 +5,8 @@ import LogoWhite from '../../assets/images/logo-white.svg'
 
 const Footer = () => {
     return (<>
-        <div className="fixed bottom-0 flex flex-row justify-around w-full 
+        {/* removed fixed */}
+        <div className="bottom-0 flex flex-row justify-around w-full 
                     items-center bg-grey-blue text-white-grey h-[80px]
                     font-ps text-psS
                     ">

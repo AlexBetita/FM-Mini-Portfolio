@@ -4,9 +4,11 @@ import {
   Outlet
 } from "react-router-dom";
 
-import Body from "./components/Body";
-import Footer from "./components/Footer/footer";
+import Home from "./components/Home";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Portfolio from "./components/Portfoilo";
+import ContactMe from "./components/ContactMe";
 
 import "./index.css";
 
@@ -33,8 +35,16 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body/>
+        element: <Home/>
       },
+      {
+        path: "/portfolio",
+        element: <Portfolio/>
+      },
+      {
+        path: "/contact-me",
+        element: <ContactMe/>
+      }
     ],
   },
 ]);
