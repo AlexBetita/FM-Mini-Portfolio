@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "IBARRA";
+    src: url("../public/fonts/Ibarra_Real_Nova/IbarraRealNova-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "PUBLIC";
+    src: url("../public/fonts/Public_Sans/PublicSans-VariableFont_wght.ttf");
+}
+
+body, html, #root {
+    height: 100%;
+    width: 100%;
+}
